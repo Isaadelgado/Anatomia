@@ -303,21 +303,21 @@
     </footer>
 
     <script>
-        const openBtn = document.getElementById("open-video-btn");
-        const closeBtn = document.getElementById("close-video-btn");
-        const videoDialog = document.getElementById("video-dialog");
+      const openBtn = document.getElementById("open-video-btn");
+      const closeBtn = document.getElementById("close-video-btn");
+      const videoDialog = document.getElementById("video-dialog");
 
-        openBtn.addEventListener("click", () => {
-            videoDialog.showModal();
-        });
-        closeBtn.addEventListener("click",() => {
-            videoDialog.close();
-        });
-        videoDialog.addEventListener("click", (event) => {
-            if (event.target === videoDialog) {
-                videoDialog.close();
-            }
-        });
+      openBtn.addEventListener("click", () => {
+        videoDialog.showModal();
+      });
+      closeBtn.addEventListener("click", () => {
+        videoDialog.close();
+      });
+      videoDialog.addEventListener("click", (event) => {
+        if (event.target === videoDialog) {
+          videoDialog.close();
+        }
+      });
     </script>
   </body>
 </html>
