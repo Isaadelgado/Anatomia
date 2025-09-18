@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anatomia Web - HTML 5</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
   </head>
   <body>
     <header class="card-header">
       <h1>Anatomia Web - HTML 5</h1>
       <p>Parte 2:Formulario e Texto</p>
       <nav>
-        <a href="voltar">⬅️Voltar para Parte 1</a>
+        <a href="index.html">⬅️Voltar para Parte 1</a>
       </nav>
     </header>
     <main class="container">
@@ -26,67 +26,181 @@
       <section id="formularios">
         <h3>Formularios Interativos: Coletando Dados</h3>
         <form class="form-container">
-         <div class="card">
+          <div class="card">
             <div class="diagram-layout">
-          <fieldset>
-            <legend>Informações Pessoais</legend>
- 
-            <label for="nome">Nome Completo:</label><br />  
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              required
-              placeholder="Ex:Isabella Delgado"
-            /><br /><br />
+              <fieldset>
+                <legend>Informações Pessoais</legend>
 
-            <label for="nascimento">Data de Nascimento:</label><br />
-            <input type="date" id="nascimento" name="nascimento" /><br /><br />
+                <label for="nome">Nome Completo:</label><br />
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  required
+                  placeholder="Ex:Isabella Delgado"
+                /><br /><br />
 
-            <label for="email">E-mail:</label><br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="Ex:isabelladelgado@gmail.com"
-            /><br /><br />
-          </fieldset>
+                <label for="nascimento">Data de Nascimento:</label><br />
+                <input
+                  type="date"
+                  id="nascimento"
+                  name="nascimento"
+                /><br /><br />
 
-          <fieldset>
-            <legend>Preferências</legend>
-            <p>Área de Foco(dropdown)</p>
+                <label for="email">E-mail:</label><br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Ex:isabelladelgado@gmail.com"
+                /><br /><br />
+              </fieldset>
 
-            <select name="" id="">
-                <option value="">Selecione uma Opção</option>
-            </select>
-            
-            <p>Nível de Experiencia:</p>
-            <input type="radio" value="Iniciante" />
-            <label for="">Iniciante</label>
-            <input type="radio" value="" />
-            <label for="">Intermediário</label>
-            <input type="radio" value="" />
-            <label for="">Avançado</label>
+              <fieldset>
+                <legend>Preferências</legend>
+                <p>Área de Foco(dropdown)</p>
 
-            <p>Tecnologias de Interesse:</p>
-            <input type="checkbox" value="" />
-            <label for="">HTML & CSS</label>
-            <input type="checkbox" value="" />
-            <label for="">JavaScript</label>
-            <input type="checkbox" value="" />
-            <label for="">React</label>    
-            
+                <select name="" id="">
+                  <option value="">Selecione uma Opção</option>
+                </select>
+
+                <p>Nível de Experiencia:</p>
+                <input type="radio" value="Iniciante" />
+                <label for="">Iniciante</label>
+                <input type="radio" value="" />
+                <label for="">Intermediário</label>
+                <input type="radio" value="" />
+                <label for="">Avançado</label>
+
+                <p>Tecnologias de Interesse:</p>
+                <input type="checkbox" value="" />
+                <label for="">HTML & CSS</label>
+                <input type="checkbox" value="" />
+                <label for="">JavaScript</label>
+                <input type="checkbox" value="" />
+                <label for="">React</label>
+              </fieldset>
+              <fieldset>
+                <legend>Feedback</legend>
+                <div class="from-group">
+                  <label for="satisfacao">Nível de Satisfação(0 a 100)</label>
+                  <input
+                    type="range"
+                    id="Satisfacao"
+                    name="satisfacao"
+                    min="0"
+                    max="100"
+                    value="75"
+                    class="form-input"
+                    oninput="resultado.value=parseInt(satisfacao.value)"
+                  />
+                  <div class="range-output">
+                    <output name="resultado" for="Satisfacao">75</output>
+                  </div>
+                </div>
+
+                <label for="mensagem" class="form-label"
+                  >Deixe seu comentário</label
+                >
+
+                <textarea
+                  name="mensagem"
+                  id="mensagem"
+                  rows="4"
+                  class="form-textarea"
+                ></textarea>
+              </fieldset>
+
+              <button type="submit" class="btn-submit">Enviar Inscrição</button>
+            </div>
+          </div>
+        </form>
+
+        <aside class="tag-highlight">
+          O formulário agora combina mútiplos elementos
+          <code>&lt;datalist&gt;</code>para autocompletar, e
+          <code>&lt;select&gt;</code> para uma lista fechada de opções. Para
+          escolhas, usamos <code>&lt;input type="radio"&gt;</code> (escolha
+          única) e <code>&lt;input type="checkbox"&gt;</code>(múltipla escolha).
+          A tag <code>&lt;output&gt;</code> exibe dinamicamente o valor do
+          <code>&lt;input type="range"&gt;</code>, criando uma experiência
+          interativa. Note também os atributos <code>&lt;placeholder&gt;</code>,
+          que exibe um texto de ajuda no campo, e <code>&lt;required&gt;</code>,
+          que torna seu preenchimento obrigatório.
+        </aside>
+      </section>
+
+      <section id="texto-avancado">
+        <h3 class="section-title">Semântica de Texto Específica</h3>
+        <div class="card tag-highlight">
+          <div class="text-content">
+            <p>
+              Nesta seção, exploramos como dar mais significado a palavras
+              específicas. Por exemplo,
+              <dfn>HTML5</dfn> é a quinta versão da
+              <abbr title="HyperText Markup Language">HTML</abbr>. Ela foi
+              oficialmente lançada em
+              <time datetime="2014-10-28">28 de outubro de 2014</time>. Uma de
+              suas principais novidades foi
+              <mark>a introdução de tags semânticas</mark>
+              , que revolucionaram a forma como estruturamos documentos para a
+              web.
+            </p>
+
+            <div class="divider">
+              <p>
+                Para contextos científicos ou matemáticos, usamos
+                <code>&lt;sub&gt;</code> e <code>&lt;sup&gt;</code>. Por
+                exemplo, a fórmula da água é H<sub>2</sub>O e 2<sup>10</sup> é
+                1024.
+              </p>
+            </div>
+
+            <div class="divider">
+              <p>
+                Para conteúdo técnico, temos um trio poderoso. Para salvar um
+                arquivo, digite <kbd>Ctrl</kbd> + <kbd>S</kbd>. O comando a
+                seguir, <code>git commit</code>, é essencial.
+              </p>
+              <p>
+                Para blocos de código maiores, combinamos
+                <code>&lt;pre&gt;</code> com <code>&lt;code&gt;</code>:
+              </p>
+              <pre><code class="language-js">function helloWorld() {
+console.log("Olá, mundo!");
+}</code></pre>
+            </div>
+
+            <div class="divider divider-list">
+              <p>
+                <code>&lt;dfn&gt;</code>, <code>&lt;abbr&gt;</code>,
+                <code>&lt;time&gt;</code>, <code>&lt;mark&gt;</code>: Dão
+                significado contextual a palavras e frases.
+              </p>
+              <p>
+                <code>&lt;sub&gt;</code> e <code>&lt;sup&gt;</code>: Para
+                fórmulas, notas de rodapé e expressões matemáticas.
+              </p>
+              <p>
+                <code>&lt;kbd&gt;</code>: Estiliza o texto para parecer uma
+                tecla, indicando uma ação do usuário.
+              </p>
+              <p>
+                <code>&lt;code&gt;</code>: Para nomes de funções ou pequenos
+                comandos.
+              </p>
+              <p>
+                <code>&lt;pre&gt;</code>: Essencial para exibir blocos de código
+                sem que o navegador colapse os espaços.
+              </p>
+            </div>
           </div>
         </div>
-          </fieldset>
-        </form>
-        <aside> 
-       O formulário agora combina mútiplos elementos <code>&lt;datalist&gt;</code>para autocompletar, e <code>&lt;select&gt;</code> para uma lista fechada de opções.
-       Para escolhas, usamos <code>&lt;input type="radio"&gt;</code> (escolha única) e <code>&lt;input type="checkbox"&gt;</code>(múltipla escolha).
-        A tag <code>&lt;output&gt;</code> exibe dinamicamente o valor do <code>&lt;input type="range"&gt;</code>, criando uma experiência interativa.
-        Note também os atributos <code>&lt;placeholder&gt;</code>, que exibe um texto de ajuda no campo, e <code>&lt;required&gt;</code>, que torna seu preenchimento obrigatório.</aside>
       </section>
     </main>
+      <footer class="main-footer">
+        <p>Projeto de Estudo da Turma de Desenvolvimento Web - 2025</p>
+      </footer>
   </body>
 </html>
